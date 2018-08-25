@@ -1,0 +1,152 @@
+/* Default Elements */
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+button{
+  height: 60px;
+  width: 180px;
+  background-color: #D81B60;
+  border: none;
+  box-shadow: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+h1{
+  color: white;
+  font-size: 45px;
+}
+
+p{
+  color: white;
+  font-size: 25px;
+}
+
+/* FUllscreen-Containers */
+
+.fullscreen-container{
+  overflow: hidden;
+  height: 100vh;
+  weight: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.landing {
+  background-color: #161616;
+    -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info{
+  background-color: #212121;
+  border-top: 5px dashed #D81B60 ;
+}
+
+.info .content-container{
+  opacity: 0;
+}
+
+/* Reused Components */
+
+.tools{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: auto;
+}
+
+.headerText{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.bodyText{
+  margin-top: 5%;
+  text-align: center;
+}
+
+.content-container .logoContainer svg{
+  width: 190px;
+  margin-left: 10px;
+  margin-top: 6px;
+  margin-right: 5px;
+}
+
+/* .landing::after{
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(#161616, rgb(165, 165, 165));
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: -50vh;
+} */
+
+.landing .logo h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 80px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.landing .logo svg{
+  max-width: 750px;
+}
+
+.scrollPage{
+  font-family: 'Source Sans Pro', sans-serif!important;
+  height: auto;
+  color: #fff;
+  font-size: 70px;
+  position: absolute;
+  bottom: 50px;
+  cursor: pointer;
+  -webkit-animation: scrollPageBounce 3s alternate infinite;
+          animation: scrollPageBounce 3s alternate infinite;
+}
+
+.scrollPage:hover{
+  -webkit-transition: -webkit-transform 200ms!important;
+  transition: -webkit-transform 200ms!important;
+  transition: transform 200ms!important;
+  transition: transform 200ms, -webkit-transform 200ms!important;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+@-webkit-keyframes scrollPageBounce{
+  0%{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }50%{
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes scrollPageBounce{
+  0%{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }50%{
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}

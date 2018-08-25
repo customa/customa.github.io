@@ -1,0 +1,15 @@
+{
+  "name": "customa-website",
+  "version": "1.0.0",
+  "description": "Generator for Creating the Customa Theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emma",
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "jquery": "^3.3.1"
+  }
+}
