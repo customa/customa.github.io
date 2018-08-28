@@ -3,13 +3,16 @@ $(window).scroll(function () {
 
     console.log(wScroll);
 
-    $('.logo svg').css({
-        'transform': `rotate(${wScroll / 200}deg) translateX(${wScroll / 7}px)`
-    });
+    if (wScroll <= $(window).height() / 1.5) {
 
-    $('.logo h1').css({
-        'transform': `rotate(-${wScroll / 200}deg) translateX(-${wScroll / 7}px)`
-    });
+        $('.logo svg').css({
+            'transform': `rotate(${wScroll / 200}deg) translateX(${wScroll / 7}px)`
+        });
+
+        $('.logo h1').css({
+            'transform': `rotate(-${wScroll / 200}deg) translateX(-${wScroll / 7}px)`
+        });
+    }
 
     if (wScroll >= $(window).height() / 4) {
         console.log('uwu');
