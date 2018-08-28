@@ -19,19 +19,17 @@ $('.logoContainer').each(() => {
 });
 
 setTimeout(() => {
-    let logoContainer = $('.logoContainer');
-    let pattern = logoContainer.find('pattern');
-    logoContainer.find('.outline').css({ 'stroke': selComb[0] });
+    $('.logoContainer').find('.outline').css({ 'stroke': selComb[0] });
 
     if ($('.logoContainer svg').hasClass('polyback')) {
-        logoContainer.find('.background').css({ 'fill': selComb[1] });
+        $('.logoContainer').find('.background').css({ 'fill': selComb[1] });
     } else {
-        pattern.find('.background').css({ 'fill': selComb[1] });
+        $('.logoContainer').find('pattern').find('.background').css({ 'fill': selComb[1] });
     }
 
-    if (pattern.find('.fill').hasClass('circle')) {
-        pattern.find('.fill').css({ 'fill': selComb[2] });
+    if ($('.logoContainer').find('pattern').find('.fill').hasClass('circle')) {
+        $('.logoContainer').find('pattern').find('.fill').css({ 'fill': selComb[2] });
     } else {
-        pattern.find('.fill').css({ 'stroke': selComb[2] });
+        $('.logoContainer').find('pattern').find('.fill').css({ 'stroke': selComb[2] });
     }
 }, 50);
