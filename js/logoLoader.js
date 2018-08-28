@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
     let logoNum = getRandomInt(5);
     let colCombinations = [['#FFFFFF', '#D81B60', '#FFFFFF'],
                            ['#FFFFFF', '#000000', '#FFFFFF'],
@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     $('.logoContainer').each(function () {
         $(this).svg({
-            onLoad: function () {
+            onLoad: () => {
                 let svg = $(this).svg('get');
                 svg.load(`svg/logo/CL${logoNum}.svg`, { addTo: true, changeSize: true });
             },
@@ -18,7 +18,7 @@ $(document).ready(function () {
         });
     });
 
-    setTimeout(function () {
+    setTimeout(() => {
         $('.logoContainer').find('.outline').css({ 'stroke': selComb[0] });
 
         if ($('.logoContainer svg').hasClass('polyback')) {
