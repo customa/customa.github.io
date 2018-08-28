@@ -1,21 +1,16 @@
-const colCombinations = [['#FFFFFF', '#D81B60', '#FFFFFF'],
-                         ['#FFFFFF', '#000000', '#FFFFFF'],
-                         ['#000000', '#FFFFFF', '#000000'],
-                         ['#D81B60', '#FFFFFF', '#D81B60'],
-                         ['#161616', '#EEEEEE', '#161616']];
-
-const logoNum = getRandomInt(5);
-const selComb = colCombinations[getRandomInt(colCombinations.length + 1)];
+let logoNum = getRandomInt(5);
+let colCombinations = [['#FFF', '#D81B60', '#FFF'], ['#FFF', '#000', '#FFF'], ['#000', '#FFF', '#000'], ['#D81B60', '#FFF', '#D81B60'], ['#161616', '#eee', '#161616']];
+let combNum = getRandomInt(colCombinations.length + 1);
+let selComb = colCombinations[combNum];
 
 $('.logoContainer').each(() => {
     $(this).svg({
         onLoad: () => {
-            let svg = $(this).svg('get');
+            var svg = $(this).svg('get');
             svg.load(`svg/logo/CL${logoNum}.svg`, { addTo: true, changeSize: true });
         },
         settings: {}
-    }
-    );
+    });
 });
 
 setTimeout(() => {
