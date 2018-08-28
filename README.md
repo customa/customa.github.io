@@ -1,3 +1,2 @@
 # customa.github.io
-Customa Website
-Stuff will follow in a bit
+Official [Customa website](https://customa.github.io), content coming soon™️.
