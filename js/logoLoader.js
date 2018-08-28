@@ -4,8 +4,8 @@ const colCombinations = [['#FFFFFF', '#D81B60', '#FFFFFF'],
                          ['#D81B60', '#FFFFFF', '#D81B60'],
                          ['#161616', '#EEEEEE', '#161616']];
 
-let logoNum = getRandomInt(5);
-let selComb = colCombinations[getRandomInt(colCombinations.length + 1)];
+const logoNum = getRandomInt(5);
+const selComb = colCombinations[getRandomInt(colCombinations.length + 1)];
 
 $('.logoContainer').each(() => {
     $(this).svg({
