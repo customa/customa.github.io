@@ -1,6 +1,6 @@
-let logoNum = getRandomInt(5);
-let colCombinations = [['#FFF', '#D81B60', '#FFF'], ['#FFF', '#000', '#FFF'], ['#000', '#FFF', '#000'], ['#D81B60', '#FFF', '#D81B60'], ['#161616', '#eee', '#161616']];
-let combNum = getRandomInt(colCombinations.length + 1);
+var logoNum = getRandomInt(5);
+var colCombinations = [['#FFF', '#D81B60', '#FFF'], ['#FFF', '#000', '#FFF'], ['#000', '#FFF', '#000'], ['#D81B60', '#FFF', '#D81B60'], ['#161616', '#eee', '#161616']];
+var combNum = getRandomInt(colCombinations.length + 1);
 var selComb = colCombinations[combNum];
 
 $('.logoContainer').each(() => {
