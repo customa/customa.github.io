@@ -2,6 +2,8 @@
 
 html {
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: #212121;
+  color: white;
 }
 
 button{
@@ -20,7 +22,6 @@ button{
 }
 
 h1{
-  color: white;
   font-size: 45px;
     -webkit-user-select: none;
      -moz-user-select: none;
@@ -28,8 +29,11 @@ h1{
           user-select: none;
 }
 
+h2{
+  font-size: 28px;
+}
+
 p{
-  color: white;
   font-size: 25px;
 }
 
@@ -62,14 +66,38 @@ p{
           align-items: center;
 }
 
+.click-catcher{
+  z-index: 3;
+}
+
+.fullscreen-container.click-catcher{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+}
+
 .info{
   background-color: #212121;
   border-top: 5px dashed #D81B60;
 }
 
 .module.base{
-  border-top: 5px dotted white;
-  background-color: #161616;
+  border-top: 5px dotted #D81B60;
+}
+
+.module.base > div div{
+  z-index: 3;
+}
+
+.module.base .image-background{
+  left: 0;
+  background: url(../img/bgBase.png);
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+  width: 100%;
+  height: 100%;
 }
 
 .info .content-container{
@@ -121,12 +149,15 @@ p{
   padding: 15px;
   margin-top: 5%;
   text-align: left;
-  /* transform: rotate(-20deg) translateX(-60%); */
 }
 
 label.checkbox{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 label.checkbox input[type="checkbox"] {display:none;}
@@ -139,6 +170,7 @@ label.checkbox div {
   background: rgba(0, 0, 0, 0.2);
   vertical-align: middle;
   position: relative;
+  -webkit-transition: background-color 200ms;
   transition: background-color 200ms;
 }
 
@@ -152,7 +184,6 @@ label.checkbox div svg{
 label.checkbox span{
   display: inline-block;
   font-size: 20px;
-  color: white;
   margin-left: 10px;
 }
 
@@ -164,10 +195,99 @@ label.checkbox :checked + div svg {
   display: block;
 }
 
+.bubble-select{
+  background-color: rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 4% auto 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2%;
+}
 
+.bubble{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  margin: 0 8px;
+  background-size: 80px 80px;
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: -webkit-filter 200ms;
+  transition: -webkit-filter 200ms;
+  transition: filter 200ms;
+  transition: filter 200ms, -webkit-filter 200ms;
+}
+
+.bubble:hover, .bubble.selected{
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  -webkit-transition: -webkit-filter 200ms;
+  transition: -webkit-filter 200ms;
+  transition: filter 200ms;
+  transition: filter 200ms, -webkit-filter 200ms;
+}
+
+.bubble-content{
+  background-color: rgba(0,0,0,0.2);
+  display: none;
+  opacity: 0;
+  width: 600%;
+  height: 200px;
+  position: relative;
+  top: 120px;
+  -webkit-transform: translateX(-50%) translateY(-15%);
+          transform: translateX(-50%) translateY(-15%);
+  left: 50%;
+  padding: 20%;
+  font-size: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: auto;
+  border-radius: 15px;
+}
+
+.bubble-content h2{
+  font-size: 23px;
+  margin-bottom: 5%;
+  font-weight: 700;
+}
+
+.bubble-content.visible{
+  -webkit-transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: animateBubbleContent 400ms;
+          animation: animateBubbleContent 400ms;
+}
 
 .fullscreen-container{
   text-align: center;
+}
+
+.alignLeft{
+  text-align: left;
 }
 
 /* .landing::after{
@@ -181,7 +301,6 @@ label.checkbox :checked + div svg {
 } */
 
 .landing .logo h1 {
-  color: #fff;
   text-align: center;
   font-size: 80px;
 }
@@ -192,14 +311,14 @@ label.checkbox :checked + div svg {
 
 .scrollPage{
   font-family: 'Source Sans Pro', sans-serif!important;
-  color: #fff;
   font-size: 70px;
   position: relative;
   margin-top: 5%;
   width: 100%;
   bottom: 30px;
   cursor: pointer;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   -webkit-animation: scrollPageBounce 3s infinite;
           animation: scrollPageBounce 3s infinite;
 }
@@ -215,6 +334,10 @@ label.checkbox :checked + div svg {
 
 .landing .scrollPage{
   top: 300px;
+}
+
+.module .content-container p{
+  font-size: 20px;
 }
 
 @-webkit-keyframes scrollPageBounce{
@@ -240,5 +363,33 @@ label.checkbox :checked + div svg {
   }100%{
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes animateBubbleContent{
+  0%{
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-15%);
+            transform: translateX(-50%) translateY(-15%);
+  }100%{
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes animateBubbleContent{
+  0%{
+    display: none;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-15%);
+            transform: translateX(-50%) translateY(-15%);
+  }100%{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
   }
 }
