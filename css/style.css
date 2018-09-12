@@ -50,7 +50,6 @@ p{
 .fullscreen-container{
   overflow: hidden;
   height: 100vh;
-  weight: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -208,7 +207,6 @@ label.checkbox :checked + div svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 2%;
@@ -225,7 +223,6 @@ label.checkbox :checked + div svg {
           filter: grayscale(100%);
   -webkit-transition: -webkit-filter 200ms;
   transition: -webkit-filter 200ms;
-  transition: filter 200ms;
   transition: filter 200ms, -webkit-filter 200ms;
 }
 
@@ -234,7 +231,6 @@ label.checkbox :checked + div svg {
           filter: grayscale(0);
   -webkit-transition: -webkit-filter 200ms;
   transition: -webkit-filter 200ms;
-  transition: filter 200ms;
   transition: filter 200ms, -webkit-filter 200ms;
 }
 
@@ -317,7 +313,6 @@ label.checkbox :checked + div svg {
   width: 100%;
   bottom: 30px;
   cursor: pointer;
-  -ms-flex-item-align: end;
       align-self: flex-end;
   -webkit-animation: scrollPageBounce 3s infinite;
           animation: scrollPageBounce 3s infinite;
@@ -326,7 +321,6 @@ label.checkbox :checked + div svg {
 .scrollPage:hover{
   -webkit-transition: -webkit-transform 200ms!important;
   transition: -webkit-transform 200ms!important;
-  transition: transform 200ms!important;
   transition: transform 200ms, -webkit-transform 200ms!important;
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);

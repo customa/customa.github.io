@@ -1,5 +1,5 @@
 $(window).scroll(function () {
-    var wScroll = $(this).scrollTop();
+    const wScroll = $(this).scrollTop();
 
     console.log(wScroll);
 
