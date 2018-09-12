@@ -65,16 +65,20 @@ p{
           align-items: center;
 }
 
-.click-catcher{
-  z-index: 3;
+.footer{
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  height: 20vh;
+  width: 100%;
+  z-index: -3;
 }
 
-.fullscreen-container.click-catcher{
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100%;
+.click-catcher{
   z-index: 2;
+  position: absolute;
+  height: 100vh;
+  min-width: 100%;
 }
 
 .info{
@@ -84,19 +88,20 @@ p{
 
 .module.base{
   border-top: 5px dotted #D81B60;
+  margin-bottom: 20vh;
+  background-color: #161616;
 }
 
 .module.base > div div{
   z-index: 3;
 }
 
-.module.base .image-background{
-  left: 0;
-  background: url(../img/bgBase.png);
-  -webkit-filter: brightness(30%);
-          filter: brightness(30%);
-  width: 100%;
-  height: 100%;
+#preview{
+  position: -webkit-sticky;
+  position: sticky;
+  left: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .info .content-container{
@@ -235,7 +240,7 @@ label.checkbox :checked + div svg {
 }
 
 .bubble-content{
-  background-color: rgba(0,0,0,0.2);
+  background-color: #121212;
   display: none;
   opacity: 0;
   width: 600%;
