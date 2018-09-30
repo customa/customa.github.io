@@ -21,7 +21,7 @@ $(window).scroll(function () {
                 $(ele).animate({
                     'opacity': 1
                 }, 500);
-            }, (index + 1) * 300);
+            }, (index + 1) * 200);
         });
     }
 });
