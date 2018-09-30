@@ -47,6 +47,7 @@ p{
 
 /* Fullscreen-Containers */
 
+/* Shared Container all Screens have */
 .fullscreen-container{
   overflow: hidden;
   height: 100vh;
@@ -67,15 +68,6 @@ p{
           align-items: center;
 }
 
-.footer{
-  background-color: white;
-  position: fixed;
-  bottom: 0;
-  height: 20vh;
-  width: 100%;
-  z-index: -3;
-}
-
 .click-catcher{
   z-index: 2;
   position: absolute;
@@ -93,13 +85,13 @@ p{
   background-color: #161616;
 }
 
-.module.base > div div{
+.module.base > div div:not(.screenshot-box):not(.screenshot-box *){
   z-index: 3;
 }
 
 #settings{
   position: relative;
-  /* left: -100vw; */
+  
 }
 
 #preview{
@@ -144,6 +136,7 @@ p{
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  z-index: 4!important;
 }
 
 .screenshot-box .screenshot-box-inner{
@@ -157,12 +150,40 @@ p{
       -ms-flex-pack: start;
           justify-content: flex-start;
   position: absolute;
+  transform: translateX(0px)
+}
+
+.scroll{
+  opacity: 0;
+  transition: opacity 200ms;
+  width: 200px;
+  color: #ffffff;
+  height: 126%;
+  margin-top: -2%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 8!important;
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: rotate(-180deg);
+}
+
+.scroll.right{
+  transform: rotate(0deg);
   right: 0;
+}
+
+.screenshot-box:hover .scroll, .screenshot-box:hover .scroll{
+  opacity: 1;
 }
 
 .screenshot-box img{
   width: 25%;
-  margin-right: 2%;
+  margin-right: 1%;
+  margin-left: 1%;
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
   transition: transform 200ms;
@@ -171,8 +192,8 @@ p{
 }
 
 .screenshot-box img:hover{
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .headerText{
@@ -207,6 +228,11 @@ p{
   padding: 15px;
   margin-top: 5%;
   text-align: left;
+  z-index: 6!important;
+}
+
+.moduleToggle *{
+  z-index: 6!important;
 }
 
 label.checkbox{
@@ -270,6 +296,7 @@ label.checkbox :checked + div svg {
   width: -moz-fit-content;
   width: fit-content;
   padding: 2%;
+  z-index: 5!important;
 }
 
 .bubble{
@@ -284,6 +311,7 @@ label.checkbox :checked + div svg {
   -webkit-transition: -webkit-filter 200ms;
   transition: -webkit-filter 200ms;
   transition: filter 200ms, -webkit-filter 200ms;
+  z-index: 5!important;
 }
 
 .bubble:hover, .bubble.selected{
@@ -336,6 +364,7 @@ label.checkbox :checked + div svg {
   display: flex;
   -webkit-animation: animateBubbleContent 400ms;
           animation: animateBubbleContent 400ms;
+  z-index: 99!important;
 }
 
 .fullscreen-container{
@@ -394,6 +423,8 @@ label.checkbox :checked + div svg {
   font-size: 20px;
 }
 
+
+/* Animations */
 @-webkit-keyframes scrollPageBounce{
   0%{
     -webkit-transform: translateY(0);
@@ -406,7 +437,6 @@ label.checkbox :checked + div svg {
             transform: translateY(0);
   }
 }
-
 @keyframes scrollPageBounce{
   0%{
     -webkit-transform: translateY(0);
@@ -419,7 +449,6 @@ label.checkbox :checked + div svg {
             transform: translateY(0);
   }
 }
-
 @-webkit-keyframes animateBubbleContent{
   0%{
     opacity: 0;
@@ -431,7 +460,6 @@ label.checkbox :checked + div svg {
             transform: translateX(-50%) translateY(0);
   }
 }
-
 @keyframes animateBubbleContent{
   0%{
     display: none;
@@ -446,4 +474,13 @@ label.checkbox :checked + div svg {
     -webkit-transform: translateX(-50%) translateY(0);
             transform: translateX(-50%) translateY(0);
   }
+}
+
+.footer{
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  height: 20vh;
+  width: 100%;
+  z-index: -3;
 }
