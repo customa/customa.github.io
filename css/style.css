@@ -75,7 +75,7 @@ p{
   min-width: 100%;
 }
 
-div.info{
+.info{
   background-color: #212121;
   border-top: 5px dashed #D81B60;
 }
@@ -345,78 +345,6 @@ label.checkbox :checked + div svg {
 
 .module .content-container p{
   font-size: 20px;
-}
-
-.screenshot-container{
-    width: 100%;
-    height: fit-content;
-    background-color: rgba(0,0,0,0.2);
-    position: absolute;
-    left: 0;
-    margin-top: 4%;
-    z-index: 3!important;
-    overflow-y: hidden;
-}
-
-.screenshot-container-scroller{
-    margin: 20px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.screenshot-container-scroller.overflow{
-    justify-content: unset;
-}
-
-.screenshot{
-    position: relative;
-}
-
-.screenshot .overlay{
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    right: 0;
-    background-color: rgba(0,0,0,0.2);
-    width: 95%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.screenshot:hover .overlay{
-    animation: overlayScreenshot 200ms forwards;
-}
-
-@keyframes overlayScreenshot {
-    0%{
-        opacity: 0;
-        transform: scale(0.5);
-    }100%{
-        opacity: 1;
-        transform: scale(1);
-     }
-}
-
-.screenshot .overlay .text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-}
-
-.screenshot .image{
-    width: 20vw;
-    margin: 0 10px;
-    -webkit-transition: transform 200ms;
-    -moz-transition: transform 200ms;
-    -ms-transition: transform 200ms;
-    -o-transition: transform 200ms;
-    transition: transform 200ms;
 }
 
 
