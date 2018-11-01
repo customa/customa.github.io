@@ -279,6 +279,15 @@ label.checkbox :checked + div svg {
   font-weight: 700;
 }
 
+.bubble-text{
+    font-size: 40px;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Open Sans', sans-serif;
+}
+
 .bubble-content.visible{
   -webkit-transform: translateX(-50%) translateY(0);
           transform: translateX(-50%) translateY(0);
