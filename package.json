@@ -11,5 +11,14 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "jquery": "^3.3.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Customa/customa.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Customa/customa.github.io/issues"
+  },
+  "homepage": "https://github.com/Customa/customa.github.io#readme"
 }
