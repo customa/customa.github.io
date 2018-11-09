@@ -1,0 +1,34 @@
+{
+  "images": [
+    {
+      "id": "baseDefault",
+      "name": "Customa Default",
+      "creator": "Customa Team",
+      "code": ":root{\n  --ColAppBG: #161616; /* Color or url('link to image')*/\n  --ColAuthBG: url('/assets/fd91131ea693096d6be5e8aa99d18f9e.jpg');\n  --ColBackground1: var(--ColAppBG); /* Color */\n  --ColBackground2: #212121; /* Color */\n  --ColAccent: #D81B60; /* Color */\n  --ColAccentAlpha: rgba(216, 27, 96, 0.1); /* Color in RGBA Format,\n  best when hex code of --ColAccent is converted to rgba and get's an opacity of 0.1 */\n  --ColAnchor: #0096cf;  /* Color */\n  --ColLastMessage: transparent; /* Transparent or Color - pref. RGBA color */\n  --ColFalse: #F44336; /* Color */\n  --ColTrue: #8BC34A; /* Color */\n  --DisplayEmbedPill: none; /* Block or none */\n  --DisplayNoConnectionBackdraw: flex; /* Flex or none */\n}"
+    },
+    {
+      "id": "baseZvava",
+      "name": "Zvava's Config",
+      "creator": "Zvava",
+      "code": ":root{\n  --c: 250, 0, 70;\n  --DisplayEmbedPill: block;\n  --DisplayNoConnectionBackdraw: none;\n  --ColAppBG: #161621;\n  --ColBackground1: #161621;\n  --ColBackground2: #212126;\n  --ColAccent: rgb(var(--c));\n  --ColAnchor: var(--ColAccent);\n  --ColAccentAlpha: rgba(var(--c), 0.1);\n  --ColFalse: var(--ColBackground1);\n  --ColTrue: var(--ColAccent);\n}"
+    },
+    {
+      "id": "baseSvvame",
+      "name": "Svvame's Config",
+      "creator": "Svvame",
+      "code": ":root{\n  --c: 250, 0, 70;\n  --DisplayEmbedPill: block;\n  --DisplayNoConnectionBackdraw: none;\n  --ColAppBG: #161621;\n  --ColBackground1: #161621;\n  --ColBackground2: #212126;\n  --ColAccent: rgb(var(--c));\n  --ColAnchor: var(--ColAccent);\n  --ColAccentAlpha: rgba(var(--c), 0.1);\n  --ColFalse: var(--ColBackground1);\n  --ColTrue: var(--ColAccent);\n}"
+    },
+    {
+      "id": "baseEmma",
+      "name": "Customa 2.0 Config",
+      "creator": "Customa Team, inspired by Zvava",
+      "code": ":root {\n  --c: 250, 0, 70;\n  --DisplayEmbedPill: none;\n  --DisplayNoConnectionBackdraw: none;\n  --ColAppBG: #161621;\n  --ColBackground1: #161621;\n  --ColBackground2: #1D1D2B;\n  --ColAccent: rgb(var(--c));\n  --ColAnchor: var(--ColAccent);\n  --ColAccentAlpha: rgba(var(--c), 0.1);\n  --ColFalse: var(--ColBackground1);\n  --ColTrue: var(--ColAccent);\n}"
+    },
+    {
+      "id": "baseEggroll",
+      "name": "Imperial Eggroll's Config",
+      "creator": "Imperial Eggroll",
+      "code": ":root {\n  --ColAppBG; #00091c;\n  --ColAuthBG; #001230;\n  --ColBackground1: #00091c;\n  --ColBackground2: #001230;\n  --ColAccent: #e7b32a;\n}"
+    }
+  ]
+}

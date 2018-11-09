@@ -102,6 +102,29 @@ p{
   width: 100vw;
 }
 
+#overlay-backdraw{
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-content: center;
+}
+
+#overlay-modal{
+    position: relative;
+    width: 70%;
+    height: fit-content;
+    align-self: center;
+    justify-self: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
 .info .content-container{
   opacity: 0;
 }
@@ -428,6 +451,76 @@ label.checkbox :checked + div svg {
     transition: transform 200ms;
 }
 
+#overlay-content{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(255,255,255,0.05);
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#overlay-modal .close{
+    z-index: 15;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#overlay-modal .close path{
+    transition: stroke 200ms;
+}
+
+#overlay-modal .close:hover path{
+    stroke: #F44336;
+}
+
+#overlay-content *{
+    align-self: center;
+}
+
+#overlay-content h1{
+    font-size: 50px;
+    margin-top: 2%;
+}
+
+#overlay-content h6{
+    font-size: 20px;
+}
+
+#overlay-modal img{
+    width: 100%;
+}
+
+.more-info-arrow{
+    -webkit-transition: transform 400ms;
+    -moz-transition: transform 400ms;
+    -ms-transition: transform 400ms;
+    -o-transition: transform 400ms;
+    transition: transform 400ms;
+    cursor: pointer;
+}
+
+.more-info-arrow.opened{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.code{
+    margin-top: 2%;
+    display: none;
+}
+
+pre code {
+    font-family: 'Fira Mono', monospace;
+}
 
 
 /* Animations */
