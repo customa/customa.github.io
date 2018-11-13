@@ -46,45 +46,16 @@ function loadContent(dialog) {
     });
 }
 
-$('.more-info-arrow').on('click', function () {
-    if ($(this).hasClass('opened')) {
-        let box = this;
-        let parent = this.parentElement;
-        let openOverBox = anime({
-            targets: parent,
-            height: 200,
-            elasticity: 0,
-            easing: 'easeInOutCubic',
-            duration: 400,
-            complete: function () {
-                $(box).removeClass('opened');
-            }
-        });
-        $(box).parent().find('.code').slideToggle(200);
-    } else {
-        let box = this;
-        let parent = this.parentElement;
-        let height = parent.parentElement.clientHeight;
-        let openOverBox = anime({
-            targets: parent,
-            height: height,
-            elasticity: 0,
-            easing: 'easeInOutCubic',
-            duration: 400,
-            complete: function () {
-                $(box).addClass('opened');
-            }
-        });
-        $(box).parent().find('.code').slideToggle(200);
-    }
-});
-
 let overlay_handler = function(e) {
     if (e.keyCode === 27) {
         closeDialog();
         return false;
     }
 };
+
+$(document).ready(function(){
+    $('.screenshot-container').perfectScrollbar();
+});
 
 $(document).bind('keyup', overlay_handler);
 
