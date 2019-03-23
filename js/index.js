@@ -53,15 +53,6 @@ const observer = new IntersectionObserver(entries => {
           ).innerText;
           // If the Currently Selected Text and the Title from the currently overscrolling object are the same (if they are, do nothing)
           if (selectedElementText != title[entry.target.classList]) {
-            const allLinks = document.querySelectorAll("nav .linkBox a");
-            allLinks.forEach(link => {
-              if (link.innerHTML != link.getAttribute("original")) {
-                fadeOutIn(link, 400, () => {
-                  link.style.width = "auto";
-                  link.innerHTML = link.getAttribute("original");
-                });
-              }
-            });
             // If the Overscrolling Object is the header, switch to the main Info Holder
             if (title[entry.target.classList] == "Customa") {
               const goMain = anime({
@@ -102,15 +93,6 @@ const observer = new IntersectionObserver(entries => {
                   });
                   break;
               }
-              console.log(`.${entry.target.classList}`);
-              const link = document.querySelector(
-                `nav .linkBox .${entry.target.classList}`
-              );
-
-              fadeOutIn(link, 400, () => {
-                link.style.width = link.getBoundingClientRect().width;
-                link.innerHTML = "Home";
-              });
             }
           }
         });
