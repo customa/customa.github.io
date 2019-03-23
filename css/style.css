@@ -80,6 +80,11 @@ p{
   border-top: 5px dashed #D81B60;
 }
 
+.divider{
+    background-color: #292929;
+    border-top: 10px double #D81B60;
+}
+
 .module.base{
   border-top: 5px dotted #D81B60;
   background-color: #161616;
@@ -159,6 +164,18 @@ p{
 .bodyText{
   margin-top: 5%;
   text-align: center;
+}
+
+.divider ul li a{
+    color: #D81B60;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.center-vertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .content-container .logoContainer svg{
@@ -330,16 +347,6 @@ label.checkbox :checked + div svg {
 .alignLeft{
   text-align: left;
 }
-
-/* .landing::after{
-  width: 100%;
-  height: 50vh;
-  background: linear-gradient(#161616, rgb(165, 165, 165));
-  display: block;
-  content: '';
-  position: absolute;
-  bottom: -50vh;
-} */
 
 .landing .logo h1 {
   text-align: center;

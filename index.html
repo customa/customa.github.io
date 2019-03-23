@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Customa</title>
 
     <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/vs2015.css">
-    <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/vs2015.css" />
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css" />
 
     <!-- Scripts -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/animejs/anime.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/jquery.lazy.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/perfect-scrollbar.jquery.min.js"></script>
     <!--<script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>-->
 
@@ -31,205 +37,268 @@
 
     <script src="js/highlight.pack.js"></script>
 
-    <script>hljs.initHighlightingOnLoad();</script>
-</head>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
 
-<body>
-<div id="overlay-backdraw">
-    <div id="overlay-modal">
-        <img id="insBackground" src="img/baseDefault.png">
+  <body>
+    <div id="overlay-backdraw">
+      <div id="overlay-modal">
+        <img id="insBackground" src="img/baseDefault.png" />
         <div class="close" onclick="closeDialog()">
-            <svg xmlns="http://www.w3.org/2000/svg" style="isolation:isolate"
-                 viewBox="501.331 333.452 96.338 92.095" width="20" height="20">
-                <g>
-                    <path d=" M 502.831 334.952 L 596.169 424.048 M 596.169 334.952 L 502.831 424.048"
-                          fill-rule="evenodd" fill="none" vector-effect="non-scaling-stroke" stroke-width="3"
-                          stroke="rgb(102,102,102)" stroke-linejoin="miter" stroke-linecap="round"
-                          stroke-miterlimit="3"></path>
-                </g>
-            </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            style="isolation:isolate"
+            viewBox="501.331 333.452 96.338 92.095"
+            width="20"
+            height="20"
+          >
+            <g>
+              <path
+                d=" M 502.831 334.952 L 596.169 424.048 M 596.169 334.952 L 502.831 424.048"
+                fill-rule="evenodd"
+                fill="none"
+                vector-effect="non-scaling-stroke"
+                stroke-width="3"
+                stroke="rgb(102,102,102)"
+                stroke-linejoin="miter"
+                stroke-linecap="round"
+                stroke-miterlimit="3"
+              ></path>
+            </g>
+          </svg>
         </div>
         <div id="overlay-content">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate"
-                 viewBox="0 0 18 8" width="45" height="20" class="more-info-arrow">
-                <g>
-                    <path d=" M 17 7 L 9 1 L 1 7" fill="none" vector-effect="non-scaling-stroke" stroke-width="4"
-                          stroke="rgb(255,255,255)" stroke-linejoin="round" stroke-linecap="round"
-                          stroke-miterlimit="3"></path>
-                </g>
-            </svg>
-            <h1 id="insName"></h1>
-            <h6>Presented by: <span id="insCreator"></span></h6>
-            <div class="code">
-                <pre><code class="css" id="insCode"></code></pre>
-            </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="isolation:isolate"
+            viewBox="0 0 18 8"
+            width="45"
+            height="20"
+            class="more-info-arrow"
+          >
+            <g>
+              <path
+                d=" M 17 7 L 9 1 L 1 7"
+                fill="none"
+                vector-effect="non-scaling-stroke"
+                stroke-width="4"
+                stroke="rgb(255,255,255)"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-miterlimit="3"
+              ></path>
+            </g>
+          </svg>
+          <h1 id="insName"></h1>
+          <h6>Presented by: <span id="insCreator"></span></h6>
+          <div class="code">
+            <pre><code class="css" id="insCode"></code></pre>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<div id="settings">
-    <div class='fullscreen-container landing'>
-        <div class='tools'>
-            <button>Scroll to Generator</button>
-            <button>Activate White-Theme</button>
+    <div id="settings">
+      <div class="fullscreen-container landing">
+        <div class="tools">
+          <button>Scroll to Generator</button>
+          <button>Activate White-Theme</button>
         </div>
         <div>
-            <div class="logo">
-                <div class='logoContainer'></div>
-                <h1>A theme just like you.</h1>
-            </div>
-            <div class="scrollPage">
-                <span>↓</span>
-            </div>
+          <div class="logo">
+            <div class="logoContainer"></div>
+            <h1>A theme just like you.</h1>
+          </div>
+          <div class="scrollPage">
+            <span>↓</span>
+          </div>
         </div>
-    </div>
-    <div class="fullscreen-container info">
+      </div>
+      <div class="fullscreen-container info">
         <div>
-            <div class='content-container headerText'>
-                <h1>Welcome to</h1>
-                <div class='logoContainer'></div>
-                <h1>!</h1>
-            </div>
-            <div class="content-container bodyText">
-                <p>Welcome to the official Customa Website.
-                    <br/>Here you can generate your very own version of our theme.
-                    <br/>Following to this little introduction you will find the generator, where you can
-                    select the modules
-                    you want.
-                </p>
-            </div>
-            <div class='content-container headerText'>
-                <h1>What is</h1>
-                <div class='logoContainer'></div>
-                <h1>?</h1>
-            </div>
-            <div class="content-container bodyText">
-                <p>Customa is a different Discord theme.
-                    <br/> We offer the most customation that is possible, featuring both variables and
-                    modules,
-                    <br/> creating a unique experience and giving the user full control over their client.
-                    <br/>As of late we also feature support for White themes, compact mode works out of the
-                    box.
-                </p>
-            </div>
-            <div class='content-container headerText'>
-                <h1>Who is</h1>
-                <div class='logoContainer'></div>
-                <h1>?</h1>
-            </div>
-            <div class="content-container bodyText">
-                <p>We are currently a team of 4, but you are free to join!
-                    <br/>But Customa wouldn't be what it is today without all the people using it.
-                    <br/>If the original Creator (GhostlyDilemma) wouldn't have gotten such great feedback
-                    over the course
-                    of almost 1.5 years,
-                    <br/> the project would have been abandoned a long time ago.
-                </p>
-            </div>
-            <div class="content-container bodyText">
-                <p>Enough information, now to the Generator!
-                </p>
-            </div>
-            <div class="scrollPage">
-                <span>↓</span>
-            </div>
+          <div class="content-container headerText">
+            <h1>Welcome to</h1>
+            <div class="logoContainer"></div>
+            <h1>!</h1>
+          </div>
+          <div class="content-container bodyText">
+            <p>
+              Welcome to the official Customa Website. <br />Here you can
+              generate your very own version of our theme. <br />Following to
+              this little introduction you will find the generator, where you
+              can select the modules you want.
+            </p>
+          </div>
+          <div class="content-container headerText">
+            <h1>What is</h1>
+            <div class="logoContainer"></div>
+            <h1>?</h1>
+          </div>
+          <div class="content-container bodyText">
+            <p>
+              Customa is a different Discord theme. <br />
+              We offer the most customation that is possible, featuring both
+              variables and modules, <br />
+              creating a unique experience and giving the user full control over
+              their client. <br />As of late we also feature support for White
+              themes, compact mode works out of the box.
+            </p>
+          </div>
+          <div class="content-container headerText">
+            <h1>Who is</h1>
+            <div class="logoContainer"></div>
+            <h1>?</h1>
+          </div>
+          <div class="content-container bodyText">
+            <p>
+              We are currently a team of 4, but you are free to join! <br />But
+              Customa wouldn't be what it is today without all the people using
+              it. <br />If the original Creator (GhostlyDilemma) wouldn't have
+              gotten such great feedback over the course of almost 1.5 years,
+              <br />
+              the project would have been abandoned a long time ago.
+            </p>
+          </div>
+          <div class="content-container bodyText">
+            <p>Enough information, now to the Generator!</p>
+          </div>
+          <div class="scrollPage">
+            <span>↓</span>
+          </div>
         </div>
-    </div>
-    <div class="fullscreen-container module base">
+      </div>
+      <div class="fullscreen-container divider">
+        <div class="center-vertical">
+          <ul class="dotted-list">
+            <li><a href="#">Back to the Customa Info</a></li>
+            <li><a href="#">To the Generator</a></li>
+            <li><a href="#">To the Base Modules</a></li>
+          </ul>
+          <h1>Base Modules</h1>
+          <h2>Modules every Customa Installation should have!</h2>
+        </div>
+      </div>
+      <div class="fullscreen-container module base">
         <div>
-            <div class="moduleToggle">
-                <label class="checkbox">
-                    <input type="checkbox"/>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="18 18" width="18" height="18">
-                            <path d=" M 3.25 10 L 6 13 L 14.75 5" fill="none" stroke-width="2"
-                                  stroke="rgb(255,255,255)"/>
-                        </svg>
-                    </div>
-                    <span>Base Module</span>
-                </label>
+          <div class="moduleToggle">
+            <label class="checkbox">
+              <input type="checkbox" />
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="18 18"
+                  width="18"
+                  height="18"
+                >
+                  <path
+                    d=" M 3.25 10 L 6 13 L 14.75 5"
+                    fill="none"
+                    stroke-width="2"
+                    stroke="rgb(255,255,255)"
+                  />
+                </svg>
+              </div>
+              <span>Base Module</span>
+            </label>
+          </div>
+          <div class="content-container headerText">
+            <h2>Features</h2>
+          </div>
+          <div class="bubble-select">
+            <div
+              class="bubble"
+              style="background-image: url('img/customa_logo.png'); background-color: #eee;"
+            >
+              <div class="bubble-content">
+                <h2>Customa Guarantee</h2>
+                The perfect base for a great Custom(a) Theme.
+                <br />You get full support for every module and a lot of
+                variables to tinker with. <br />
+                If you want the full experience, here is where it starts.
+              </div>
             </div>
-            <div class='content-container headerText'>
-                <h2>Features</h2>
+            <div
+              class="bubble"
+              style="background-image: url('img/confuzzledCode.png'); background-color: #D81B60;"
+            >
+              <div class="bubble-content">
+                <h2>Deals with the Class-Mess so you don't have to</h2>
+                We've been dealing with all of the obfuscated classnames, in
+                order to deliver a theme which runs perfectly on BetterDiscord,
+                BeautifulDiscord, in the browser and on any other CSS injector.
+              </div>
             </div>
-            <div class="bubble-select">
-                <div class="bubble" style="background-image: url('img/customa_logo.png'); background-color: #eee;">
-                    <div class="bubble-content">
-                        <h2>Customa Guarantee</h2>
-                        The perfect base for a great Custom(a) Theme.
-                        <br/>You get full support for every module and a lot of variables to tinker with.
-                        <br/> If you want the full experience, here is where it starts.
-                    </div>
-                </div>
-                <div class="bubble"
-                     style="background-image: url('img/betterdiscord_logo.png'); background-color: #212121;">
-                    <div class="bubble-content">
-                        <h2>Designed with BetterDiscord in mind</h2>
-                        All settings for BetterDiscord have been themed according to the rest of the theme.
-                        <br/> The theme works with and without BD Blue and Dark mode.
-                    </div>
-                </div>
-                <div class="bubble" style="background-image: url('img/confuzzledCode.png'); background-color: #D81B60;">
-                    <div class="bubble-content">
-                        <h2>Deals with the Class-Mess so you don't have to</h2>
-                        We've been dealing with all of the obfuscated classnames, in order to deliver a theme
-                        which runs perfectly on BetterDiscord,
-                        BeautifulDiscord, in the browser and on any other CSS injector.
-                    </div>
-                </div>
-                <div class="bubble" style="background-color: #FFEB3B;">
-                    <span class="bubble-text" style="color: #000000">12+</span>
-                    <div class="bubble-content">
-                        <h2>12 variables and still counting!</h2>
-                        12 custom variables are shipped with the base module alone, making the base itself a
-                        worthy alternative to the default CSS.
-                        <br/> An explanation of the variables can be found later on.
-                    </div>
-                </div>
+            <div
+              class="bubble"
+              style="background-image: url('img/betterdiscord_logo.png'); background-color: #212121;"
+            >
+              <div class="bubble-content">
+                <h2>Designed with BetterDiscord in mind</h2>
+                All settings for BetterDiscord have been themed according to the
+                rest of the theme.
+                <br />
+                The theme works with and without BD Blue and Dark mode.
+              </div>
             </div>
-            <div class='content-container headerText'>
-                <h2>Screenshots</h2>
+            <div class="bubble" style="background-color: #D81B60;">
+              <span class="bubble-text" style="color: #000000">12+</span>
+              <div class="bubble-content">
+                <h2>12 variables and still counting!</h2>
+                12 custom variables are shipped with the base module alone,
+                making the base itself a worthy alternative to the default CSS.
+                <br />
+                An explanation of the variables can be found later on.
+              </div>
             </div>
-            <div class="screenshot-container">
-                <div class="screenshot-container-scroller overflow">
-                    <div class="screenshot" onclick="openDialog('baseDefault')">
-                        <img class="image" src="img/baseDefault.png">
-                        <div class="overlay">
-                            <div class="text">Customa Default</div>
-                        </div>
-                    </div>
-                    <div class="screenshot" onclick="openDialog('baseZvava')">
-                        <img class="image" src="img/baseZvava.png">
-                        <div class="overlay">
-                            <div class="text">Zvava's Config</div>
-                        </div>
-                    </div>
-                    <div class="screenshot" onclick="openDialog('baseSvvame')">
-                        <img class="image" src="img/baseSvvame.png">
-                        <div class="overlay">
-                            <div class="text">Svvame's Config</div>
-                        </div>
-                    </div>
-                    <div class="screenshot" onclick="openDialog('baseEmma')">
-                        <img class="image" src="img/baseEmma.png">
-                        <div class="overlay">
-                            <div class="text">Customa 2.0<br/> Inspired by Zvava</div>
-                        </div>
-                    </div>
-                    <div class="screenshot" onclick="openDialog('baseEggroll')">
-                        <img class="image" src="img/baseEggroll.png">
-                        <div class="overlay">
-                            <div class="text">Imperial Eggroll's Config</div>
-                        </div>
-                    </div>
+          </div>
+          <div class="content-container headerText">
+            <h2>Screenshots</h2>
+          </div>
+          <div class="screenshot-container">
+            <div class="screenshot-container-scroller overflow">
+              <div class="screenshot" onclick="openDialog('baseDefault')">
+                <img class="image" src="img/baseDefault.png" />
+                <div class="overlay">
+                  <div class="text">Customa Default</div>
                 </div>
+              </div>
+              <div class="screenshot" onclick="openDialog('baseZvava')">
+                <img class="image" src="img/baseZvava.png" />
+                <div class="overlay">
+                  <div class="text">Zvava's Config</div>
+                </div>
+              </div>
+              <div class="screenshot" onclick="openDialog('baseSvvame')">
+                <img class="image" src="img/baseSvvame.png" />
+                <div class="overlay">
+                  <div class="text">Svvame's Config</div>
+                </div>
+              </div>
+              <div class="screenshot" onclick="openDialog('baseEmma')">
+                <img class="image" src="img/baseEmma.png" />
+                <div class="overlay">
+                  <div class="text">
+                    Customa 2.0<br />
+                    Inspired by Zvava
+                  </div>
+                </div>
+              </div>
+              <div class="screenshot" onclick="openDialog('baseEggroll')">
+                <img class="image" src="img/baseEggroll.png" />
+                <div class="overlay">
+                  <div class="text">Imperial Eggroll's Config</div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
         <div class="click-catcher"></div>
+      </div>
     </div>
-</div>
-<div id="preview" class="fullscreen-container">
-    test
-</div>
-</body>
-
+    <div id="preview" class="fullscreen-container">
+      test
+    </div>
+  </body>
 </html>
