@@ -1,6 +1,3 @@
-// Perfect Scrollbar
-const ps = new PerfectScrollbar(document.querySelector("html"));
-
 /* On Scroll Effects */
 const sections = [
   document.querySelector("header"),
