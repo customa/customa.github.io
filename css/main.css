@@ -1,3 +1,28 @@
+:root {
+  --font-weight-header: bold;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../misc/font/montserrat/Montserrat-Bold.woff),
+    url(../misc/font/montserrat/Montserrat-Bold.woff2);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../misc/font/montserrat/Montserrat-Regular.woff),
+    url(../misc/font/montserrat/Montserrat-Regular.woff2);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: url(../misc/font/firacode/FiraCode-Regular.woff),
+    url(../misc/font/firacode/FiraCode-Regular.woff2);
+  font-weight: normal;
+}
+
 body,
 html {
   font-family: "Montserrat", sans-serif;
@@ -5,6 +30,12 @@ html {
   background-color: var(--background);
   margin: 0;
   color: var(--textMain);
+  overflow-x: hidden;
+  /* Font rendering */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 200ms;
 }
 
 header {
@@ -23,7 +54,7 @@ header {
   position: absolute;
   bottom: 2%;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: var(--font-weight-header);
   opacity: 0;
   animation: scrollInfoIn 200ms ease-in-out 2.7s;
   animation-fill-mode: forwards;
@@ -42,12 +73,65 @@ content {
 content h1 {
   margin-top: 0;
   font-size: 40px;
-  font-weight: 500;
+  font-weight: var(--font-weight-header);
   text-align: center;
 }
 
-section.discord-theme {
-  background-color: #161616;
+section#discord-theme {
+  background-color: #7289da;
+  color: white;
+}
+
+.settings {
+  position: absolute;
+  background-color: #212121;
+  height: 50px;
+  width: 400px;
+  top: 2%;
+  right: 0;
+  transform: translateX(400px);
+  transition: transform 200ms;
+}
+
+.settings.visible {
+  transform: translateX(250px);
+}
+
+.settings .settingsHandle {
+  width: 0;
+}
+
+.settings .settingsHandle::before {
+  height: 50px;
+  font-size: 40px;
+  line-height: 15px;
+  border-radius: 10px 0 0 10px;
+  position: relative;
+  right: 40px;
+  width: 40px;
+  content: "•";
+  color: var(--background);
+  background-color: var(--textMain);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: line-height 500ms;
+  overflow: hidden;
+}
+
+.settings.visible .settingsHandle::before {
+  line-height: 70px;
+}
+
+.settings .settingsContent {
+  position: absolute;
+  top: 0;
+  margin-left: 10px;
+}
+
+.settings .settingsContent p {
+  margin-bottom: 15px;
+  margin-left: 4px;
   color: white;
 }
 

@@ -12,28 +12,25 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .tgl-skewed + .tgl-btn {
   overflow: hidden;
-  -webkit-transform: skew(-10deg);
-  transform: skew(-10deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition: all 0.2s ease;
-  font-family: sans-serif;
-  background: #888;
+  background: var(--textMain);
 }
 .tgl-skewed + .tgl-btn:after,
 .tgl-skewed + .tgl-btn:before {
-  -webkit-transform: skew(10deg);
-  transform: skew(10deg);
   display: inline-block;
   transition: all 0.2s ease;
   width: 100%;
   text-align: center;
   position: absolute;
-  line-height: 2em;
-  font-weight: bold;
+  line-height: 3em;
+  font-weight: normal;
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
@@ -45,14 +42,11 @@
   left: 0;
   content: attr(data-tg-off);
 }
-.tgl-skewed + .tgl-btn:active {
-  background: #888;
-}
 .tgl-skewed + .tgl-btn:active:before {
   left: -10%;
 }
 .tgl-skewed:checked + .tgl-btn {
-  background: #86d993;
+  background: var(--logoAccent);
 }
 .tgl-skewed:checked + .tgl-btn:before {
   left: -100%;

@@ -8,18 +8,18 @@
     <link rel="icon" type="image/png" href="misc/logo/Logo.png" />
 
     <!-- Internal Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="css/themewhite.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="css/themedark.css" /> -->
+    <link
+      class="theme"
+      rel="stylesheet"
+      type="text/css"
+      href="css/themedark.css"
+    />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/nav.css" />
     <link rel="stylesheet" type="text/css" href="css/logo.css" />
     <link rel="stylesheet" type="text/css" href="css/toggle.css" />
 
     <!-- External Stylesheets -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Fira+Mono|Montserrat:400,500"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="css/sb-custom.css" />
 
     <!-- External Scripts -->
@@ -36,6 +36,24 @@
   <body data-simplebar>
     <main>
       <header id="header">
+        <div class="settings">
+          <div class="settingsContent">
+            <p>Dark Mode</p>
+            <input
+              class="tgl tgl-skewed"
+              id="cbDarkMode"
+              type="checkbox"
+              checked
+            />
+            <label
+              class="tgl-btn"
+              data-tg-off="OFF"
+              data-tg-on="ON"
+              for="cbDarkMode"
+            ></label>
+          </div>
+          <div class="settingsHandle"></div>
+        </div>
         <div class="loading">
           <div class="loadingLogo">
             <div class="logoOuter">
@@ -91,13 +109,6 @@
       <section id="discord-theme">
         <content>
           <h1>Discord Theme</h1>
-          <!-- <input class="tgl tgl-skewed" id="cb3" type="checkbox" />
-          <label
-            class="tgl-btn"
-            data-tg-off="OFF"
-            data-tg-on="ON"
-            for="cb3"
-          ></label> -->
         </content>
       </section>
       <section id="firefox-theme">

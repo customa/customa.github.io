@@ -124,3 +124,20 @@ function scrollToGroup(links) {
     link.removeAttribute("href");
   });
 }
+
+document.querySelector(".settings .settingsHandle").onclick = () => {
+  document.querySelector(".settings").classList.toggle("visible");
+};
+
+document.querySelectorAll(".tgl").forEach(button => {
+  if (button.id == "cbDarkMode") {
+    button.onchange = element => {
+      const link = document.querySelector("link.theme");
+      if (element.srcElement.checked) {
+        link.setAttribute("href", "css/themedark.css");
+      } else {
+        link.setAttribute("href", "css/themewhite.css");
+      }
+    };
+  }
+});
